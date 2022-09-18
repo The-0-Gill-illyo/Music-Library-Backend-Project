@@ -6,9 +6,10 @@ from .models import Music_Library
 # Create your views here.
 @api_view(['GET'])
 def music_list(request):
-    lists = Music_Library.objects.all()
 
-    serializer = Music_LibrarySerializer(lists, many=True)
+    QuerySet = Music_Library.objects.all()
+
+    serializer = Music_LibrarySerializer(QuerySet, many=True)
 
     return Response(serializer.data)
 
