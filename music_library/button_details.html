@@ -1,0 +1,6 @@
+
+
+<form action="{% url 'liked_song' Music_Library.pk%}" method="POST">
+    {% csrf_token %}
+    <button type="submit", name="song_id", value="{{ song.id }}", class="btn btn-primary btn-sm">Like</button>
+</form>
